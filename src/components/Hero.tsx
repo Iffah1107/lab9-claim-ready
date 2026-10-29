@@ -17,7 +17,7 @@ export default function Hero() {
             </div>
 
             <h1 className="font-sans font-extrabold text-[36px] sm:text-[46px] lg:text-[60px] leading-[1.06] tracking-[-0.035em] text-secondary text-balance">
-              A free checklist for anyone about to file a warranty claim.
+             Your free step-by-step checklist for a successful warranty claim.
             </h1>
 
             {/* WHO THIS IS FOR Section Callout */}
