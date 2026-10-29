@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-primary: #087A58;
+  --color-primary-strong: #066748;
+  --color-primary-ink: #065F43;
+  --color-primary-soft: #EEFAF5;
+  --color-primary-soft-2: #DCF3EA;
+  --color-primary-border: #B9E6D6;
+  --color-on-primary: #FFFFFF;
+  --color-primary-bright: #34D399;
+  --color-secondary: #0D1117;
+  --color-on-secondary: #FFFFFF;
+  --color-neutral: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #FBFCFD;
+  --color-surface-muted: #F7F8FA;
+  --color-surface-sunken: #F2F4F7;
+  --color-on-surface: #363C47;
+  --color-on-surface-strong: #0D1117;
+  --color-on-surface-variant: #5B6472;
+  --color-on-surface-muted: #697382;
+  --color-outline: #E7EAEF;
+  --color-outline-strong: #D6DBE3;
+  --color-error: #D61F26;
+  --color-on-error: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-plus-jakarta);
+  line-height: 1.72;
+  font-size: 17px;
+  overflow-x: hidden;
+}
+
+/* Custom Text Selection per DESIGN.md */
+::selection {
+  background-color: #DCF3EA;
+  color: #065F43;
+}
+
+::-moz-selection {
+  background-color: #DCF3EA;
+  color: #065F43;
+}
+
+/* Tabular numbers for stat cells per DESIGN.md */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Scanline texture for the dark Headline Card */
+.scanlines {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Focus styles per DESIGN.md */
+*:focus-visible {
+  outline: 2px solid #087A58;
+  outline-offset: 3px;
+}
+
+/* Print styles for Download/Print Checklist */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
